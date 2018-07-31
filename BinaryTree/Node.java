@@ -1,8 +1,8 @@
 package BinaryTree;
 
 public class Node {
-    int data;
-    Node left, right;
+    public int data;
+    public Node left, right;
 
     public Node(int data)
     {
