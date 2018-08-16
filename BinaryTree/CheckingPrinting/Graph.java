@@ -13,6 +13,14 @@ public class Graph {
         }
     }
 
+    public int getVertices() {
+        return vertices;
+    }
+
+    public LinkedList[] getAdjacencyList() {
+        return adjacencyList;
+    }
+
     public void addEdge(int source, int destination) {
         adjacencyList[source].add(destination);
         adjacencyList[destination].add(source);
