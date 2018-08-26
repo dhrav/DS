@@ -21,30 +21,30 @@ public class DuplicateSubTreeInBT {
         root.left.right = new Node('E');
         root.right.right = new Node('B');
         root.right.right.right = new Node('E');
-        //root.right.right.left= new Node('D');
+        root.right.right.left= new Node('D');
         root.right.right.left= new Node('Z');
 
-        System.out.println("".equals(findDuplicateSubTree(root, "", new HashSet<String>())));
+        System.out.println("".equals(findDuplicateSubTree(root,  new HashSet<String>())));
     }
 
-    private static String findDuplicateSubTree(Node root, String result, HashSet<String> subTreeSet) {
+    private static String findDuplicateSubTree(Node root, HashSet<String> subTreeSet) {
         if(root == null) {
             return "$";
         }
 
-        String leftSubTreeString = findDuplicateSubTree(root.left, result, subTreeSet);
+        String leftSubTreeString = findDuplicateSubTree(root.left, subTreeSet);
         if("".equals(leftSubTreeString)) {
             return leftSubTreeString;
         }
 
-        String rightSubTreeString = findDuplicateSubTree(root.right, result, subTreeSet);
+        String rightSubTreeString = findDuplicateSubTree(root.right, subTreeSet);
         if("".equals(rightSubTreeString)) {
             return rightSubTreeString;
         }
 
         String currentString = root.data + leftSubTreeString + rightSubTreeString;
 
-        if(currentString.length() > 3 && subTreeSet.contains(currentString)) {
+        if(currentString.length() >= 3 && subTreeSet.contains(currentString)) {
             return "";
         } else {
             subTreeSet.add(currentString);
