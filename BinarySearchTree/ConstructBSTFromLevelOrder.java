@@ -37,7 +37,7 @@ public class ConstructBSTFromLevelOrder {
         while(index < size) {
             Node element = queue.remove();
 
-            if(index < size && arr[index] < element.data && arr[index] > element.min) {
+            if(arr[index] < element.data && arr[index] > element.min) {
                 newNode = new Node(arr[index++]);
                 newNode.min = element.min;
                 newNode.max = element.data;
