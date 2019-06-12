@@ -1,8 +1,8 @@
 package Heap;
 
-public class MergeKSortedArray {
+public class MergeKSortedArrayWithSameLength {
     public static void main(String[] args) {
-        MergeKSortedArray object = new MergeKSortedArray();
+        MergeKSortedArrayWithSameLength object = new MergeKSortedArrayWithSameLength();
         int[][] arr = {{1,3,4,55},
                 {11,13,14,15},
                 {21,23,24,25}};
